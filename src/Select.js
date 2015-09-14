@@ -271,8 +271,8 @@ var Select = React.createClass({
 			}
 		}
 		return values.map(function(val) {
-			if (typeof val === 'string' || typeof val === 'number' &&
-				values.indexOf(val) === -1) {
+			if (typeof val === 'string' || typeof val === 'number') {
+
 				for (var key in options) {
 					if (options.hasOwnProperty(key) &&
 						options[key] &&
@@ -285,12 +285,7 @@ var Select = React.createClass({
 				}
 				return { value: val, label: val };
 			} else {
-				console.log("When does this fire");
-				if(values.indexOf(val)===-1)
 				return val;
-				else{
-					
-				}
 			}
 		});
 	},
@@ -677,7 +672,7 @@ var Select = React.createClass({
 		}
 		// Add the current value to the filtered options in last resort
 		var options = this.state.filteredOptions;
-		if (this.props.allowCreate && this.state.inputValue.trim()) {
+		if (values.indexOf(inputValue) === this.props.allowCreate && this.state.inputValue.trim()) {
 			var inputValue = this.state.inputValue;
 			options = options.slice();
 			var newOption = this.props.newOptionCreator ? this.props.newOptionCreator(inputValue) : {
