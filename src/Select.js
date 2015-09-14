@@ -764,6 +764,7 @@ var Select = React.createClass({
 					onRemove: onRemove,
 					disabled: this.props.disabled
 				});
+				if(val.indexOf(valueComponent) == -1)
 				value.push(valueComponent);
 			}, this);
 		}
