@@ -272,7 +272,7 @@ var Select = React.createClass({
 		}
 		return values.map(function(val) {
 			if (typeof val === 'string' || typeof val === 'number' &&
-				values.indexOf(val) !== -1) {
+				values.indexOf(val) === -1) {
 				for (var key in options) {
 					if (options.hasOwnProperty(key) &&
 						options[key] &&
