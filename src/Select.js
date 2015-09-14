@@ -285,7 +285,12 @@ var Select = React.createClass({
 				}
 				return { value: val, label: val };
 			} else {
+				console.log("When does this fire");
+				if(values.indexOf(val)===-1)
 				return val;
+				else{
+					
+				}
 			}
 		});
 	},
