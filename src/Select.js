@@ -672,7 +672,7 @@ var Select = React.createClass({
 		}
 		// Add the current value to the filtered options in last resort
 		var options = this.state.filteredOptions;
-		if (values.indexOf(inputValue) === this.props.allowCreate && this.state.inputValue.trim()) {
+		if (values.indexOf(inputValue) === -1 && this.props.allowCreate && this.state.inputValue.trim()) {
 			var inputValue = this.state.inputValue;
 			options = options.slice();
 			var newOption = this.props.newOptionCreator ? this.props.newOptionCreator(inputValue) : {
